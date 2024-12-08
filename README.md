@@ -15,7 +15,7 @@ This app was developed by Mohammad Shehroz Ashraf & Syeda Beena Rizvi as part of
 
 ## How to Run the App
 1. **Open MATLAB**:
-   Ensure you have MATLAB installed on your computer and the required toolboxes.
+   Make sure you have MATLAB installed on your device and all the required toolboxes.
 
 2. **Save the Script**:
    Save the provided `cartoonizeAppFinal.m` file in your working directory.
@@ -28,9 +28,9 @@ This app was developed by Mohammad Shehroz Ashraf & Syeda Beena Rizvi as part of
    The Cartoonizer App will open in a new window.
 
 ## Using the GUI
-### Step-by-Step Instructions
+### Step-by-Step Detailed Instructions
 1. **Upload an Image**:
-   - Click the `Upload Image` button.
+   - Click on the `Upload Image` button.
    - Select a supported image file (`.jpg`, `.png`, `.jpeg`) from your computer.
    - The image will be displayed in the left preview panel.
 

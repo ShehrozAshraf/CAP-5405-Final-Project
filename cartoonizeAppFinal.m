@@ -37,9 +37,6 @@ function cartoonizeAppFinal()
                 error('Invalid file format.');
             end
             originalImage = imread(fullfile(path, file));
-            if size(originalImage, 3) == 4
-                originalImage = originalImage(:, :, 1:3);
-            end
             imshow(originalImage, 'Parent', axOriginal);
         catch ME
             uialert(fig, 'Invalid image format or file.', 'Error');
@@ -69,11 +66,12 @@ function cartoonizeAppFinal()
         edges = imdilate(edges, strel('disk', edgeSize));
 
         % Step 5: Color Quantization
+        %Reduces the number of distinct colors in the image to numColors
         [quantizedImage, colormap] = rgb2ind(originalImage, numColors);
         quantizedImage = ind2rgb(quantizedImage, colormap);
 
         % Step 6: Combine Edges and Colors
-        edges3D = repmat(edges, [1, 1, 3]); % Match RGB dimensions
+        edges3D = repmat(edges, [1, 1, 3]); % Match RGB dimensions / Convert 2D edge map into a 3D binary Mask
         cartoonImage = imbilatfilt(quantizedImage); % Apply bilateral filtering for smoother effect
         cartoonImage(edges3D) = 0; % Set edge pixels to black
 
